@@ -1,6 +1,15 @@
-Install the LarvSeg package in developing mode
+## Installation
+Install LarvSeg in development mode:
+
+```bash
 pip install -e .
-Training command:
+Training
+Run distributed training. Replace <path_to_config> with your config file path.
 bash tools/dist_train.sh <path_to_config>
-Evaluation command:
+Evaluation
+Run distributed evaluation and calculate mIoU.
+<path_to_config>: path to model configuration file
+<path_to_checkpoint>: path to model checkpoint
+<num_gpus>: number of GPUs used for evaluation
 bash tools/dist_test.sh <path_to_config> <path_to_checkpoint> <num_gpus> --eval mIoU
+
